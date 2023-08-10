@@ -1,0 +1,57 @@
+dialog{
+    background-color: #fff;
+    width: 80%;
+    height: 400px;
+    color: var(--default-color);
+    outline: none;
+    border: none;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    position: relative;
+    border-radius: 8px;
+    
+}
+dialog > .modal-header{
+    height: 40px;
+    padding: 0 0 0 15px;
+    border-bottom: 1px solid var(--line-devide-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    left:0;
+    top:0;
+
+}
+dialog > .modal-body{
+    height: var(100% - 40px);
+    overflow: auto;
+}
+.icon-close{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper-cards{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(2, 280px);
+    grid-template-rows: repeat(2, 150px);
+    grid-gap: 8px;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+.card .card-value{
+    font-family: Roboto-Bold;
+    font-size: 2.5rem;
+}
+.card .card-label{
+    font-size: 1.5rem;
+    color: #aaa;
+}
