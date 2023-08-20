@@ -10,7 +10,7 @@
   font-family: Roboto-Black;
   src: url(./assets/Roboto/Roboto-Black.ttf);
 }
-
+*{margin: 0; padding: 0; box-sizing: border-box;}
 :root {
   font-family: Roboto;
   line-height: 1.5;
