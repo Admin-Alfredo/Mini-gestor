@@ -4,6 +4,9 @@ export const Container = styled.div`
     height: 40px;
     display: flex;
     border: 1px solid #919192e1;
+    /* & > input.field-control:focus +.field-control-icon{
+
+    } */
 `
 export const Control = styled.input`
     border: none;
@@ -21,15 +24,11 @@ export const Control = styled.input`
     }
     
 `
-
-  .field - control - container >.field - control - icon {
+export const ControlIcon = styled.div`
     height: 40px;
     width: 40px;
     display: flex;
-    justify - content: center;
-    align - items: center;
-}
-  
-  .field - control - container > input.field - control: focus +.field - control - icon {
-    display: none;
-}
+    justify-content: center;
+    align-items: center;
+   
+` 
