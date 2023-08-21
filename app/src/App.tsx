@@ -7,7 +7,7 @@ function App() {
   return (
     <AppContainer>
       <Header></Header>
-      <InputField />
+      <InputField width={200}/>
      My App Mini-Gestor!
      <a href="#">click aqui</a>
     </AppContainer>
