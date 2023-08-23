@@ -6,12 +6,17 @@ export const Container = styled.div`
     display: flex; 
     flex-direction: column;
     /* margin-right: 20px; */
+    & > span {
+        color: #5b5e61;
+        font-size: 1.3rem;
+        margin-bottom: 6px;
+    }
 `
 export const ControlWrapper = styled.div`
     width: 100%;
-    height: 40px;
     display: flex;
-    border: 1px solid #919192;
+    border: 2px solid #d0d5dd;
+    border-radius: 3px;
 `
 export const Control = styled.input`
     border: none;
@@ -24,8 +29,13 @@ export const Control = styled.input`
     font-size: 1.4rem;
     outline: none;
     padding: 0 9px;
+    border-radius: 3px;
     &:focus {
         outline: 3px solid #4f84f8;
+    }
+    &::placeholder{
+        font-size: 1.2rem;
+        color:#d0d5dd;
     }
 `
 export const ControlIcon = styled.div`

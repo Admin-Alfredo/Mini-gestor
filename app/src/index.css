@@ -2,15 +2,23 @@
   font-family: Roboto;
   src: url(./assets/Roboto/Roboto-Regular.ttf);
 }
+
 @font-face {
   font-family: Roboto-Bold;
   src: url(./assets/Roboto/Roboto-Bold.ttf);
 }
+
 @font-face {
   font-family: Roboto-Black;
   src: url(./assets/Roboto/Roboto-Black.ttf);
 }
-*{margin: 0; padding: 0; box-sizing: border-box;}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 :root {
   font-family: Roboto;
   line-height: 1.5;
@@ -18,7 +26,7 @@
 
   color-scheme: light dark;
   color: #242424;
-  background-color: #fff;
+  background-color: #ffffff;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -26,12 +34,18 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
-  /* Safari */
   -webkit-user-select: none;
-  /* IE 10 and IE 11 */
   -ms-user-select: none;
-  /* Standard syntax */
   user-select: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #7d7f81;
 }
 
 a {
