@@ -1,4 +1,4 @@
-import { Table } from "reactstrap"
+
 import { styled } from "styled-components"
 
 export const ItemContainer = styled.div`
@@ -14,4 +14,3 @@ export const ItemControllers = styled.div`
     grid-column-gap: 40px;
     /* grid-template-rows: repeat(2, 38px); */
 `
-export const ItemTable = styled(Table)``

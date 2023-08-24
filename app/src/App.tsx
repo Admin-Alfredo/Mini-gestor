@@ -3,10 +3,13 @@ import IPTable from "./components/IPTable"
 import InputField from "./components/InputField"
 import { ItemContainer, ItemControllers } from "./components/ItemComponent/styles"
 import { ProdContainer, ProdControllers, ProdTable } from "./components/ProdComponent/styles"
+import Item from "./entities/Item"
 import { AppContainer, Main } from "./styles"
-
+const names = ['Arroz', 'Marmelada', 'Melacia', 'Maioneze']
 function App() {
-
+  const items: Array<Item> = [0,1,2,3,4,9,0,1,2,3,4,9].map((_, i) => {
+    return new Item(names[Math.floor(Math.random() * names.length)], 20000, 10, 'Angolisal', 3, 1000)
+  })
   return (
     <AppContainer>
       <Header />
@@ -21,10 +24,15 @@ function App() {
             <InputField type="number" label="Unidade" width="100%" />
             <InputField type="number" label="Preço unitário" width="100%" />
           </ItemControllers>
-          <div style={{ margin: '20px 0'}}>
+          <div style={{ margin: '20px 0' }}>
             <h2 >Lista dos item</h2>
           </div>
-          <IPTable/>
+          <IPTable
+            data={items}
+            hasIndex={true}
+            header={['ITEMS','PRECO', 'QTD', 'FORNECEDOR', 'TOTAL']}
+            attr={['getNome', 'getPreco', 'getQtd', 'getFornecedor', 'getPrecoUnitario']} />
+
         </ItemContainer>
 
         <ProdContainer>
@@ -35,9 +43,6 @@ function App() {
 
             <InputField type="text" label="Cliente" width="100%" />
           </ProdControllers>
-          <ProdTable>
-
-          </ProdTable>
         </ProdContainer>
       </Main>
 
