@@ -31,7 +31,7 @@ function App() {
             data={items}
             hasIndex={true}
             header={['ITEMS','PRECO', 'QTD', 'FORNECEDOR', 'TOTAL']}
-            attr={['getNome', 'getPreco', 'getQtd', 'getFornecedor', 'getPrecoUnitario']} />
+            attr={['getNome', 'getPreco', ';ç', 'getFornecedor', 'getPrecoUnitario']} />
 
         </ItemContainer>
 
