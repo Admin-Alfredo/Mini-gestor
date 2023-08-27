@@ -7,7 +7,7 @@ export const ProdContainer = styled.div`
     border-left: 1px solid  #d0d5ddf7;
     
 `
-export const ProdControllers = styled.div`
+export const ProdControllers = styled.form`
     display: grid;
     grid-template-columns: 200px 180px 200px;
     grid-row-gap: 20px;

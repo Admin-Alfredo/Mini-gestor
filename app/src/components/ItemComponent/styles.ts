@@ -7,7 +7,7 @@ export const ItemContainer = styled.div`
     padding: 20px;
     
 `
-export const ItemControllers = styled.div`
+export const ItemControllers = styled.form`
     display: grid;
     grid-template-columns: 200px 180px 200px;
     grid-row-gap: 20px;
