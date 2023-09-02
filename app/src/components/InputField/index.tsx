@@ -1,7 +1,9 @@
 import { Container, Control, ControlWrapper } from "./styles";
-import { ChangeEvent, FC } from 'react'
+import { ComponentProps } from 'react'
+import { ChangeEvent, FocusEvent } from 'react'
 
-interface IProps {
+
+export type IProps = ComponentProps<"input"> & {
 	type: 'text' | 'number' | 'email' | 'password';
 	label?: string | null;
 	width?: (number | string | null);
@@ -13,26 +15,26 @@ interface IProps {
 	register?: any;
 	onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 	onBlur?: (e: ChangeEvent<HTMLInputElement>) => void;
-	onFocus?: (e: ChangeEvent<HTMLInputElement>) => void;
+	onFocus?: (e: FocusEvent<HTMLInputElement>) => void;
 }
 export default function InputField(props: IProps) {
-	console.log("REGISTER: ", props.register)
+	
+	// console.log("REGISTER: ", )
 	return (
 		<Container style={{ width: (props.width && typeof props.width == 'number' ? props.width + 'px' : props.width)! }}>
 			{props.label && <span>{props.label}</span>}
 			<ControlWrapper>
 				<Control
+					{...props}
 					type={props.type}
 					value={props.value}
 					name={props.name}
 					placeholder={props.placeholder}
 					disabled={props.disabled}
-
 					onChange={props.onChange}
 					onBlur={props.onBlur}
 					onFocus={props.onFocus}
-					{...props.register}
-				/>
+					{...props.register} />
 			</ControlWrapper>
 		</Container>
 	)

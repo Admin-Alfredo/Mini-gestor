@@ -1,5 +1,6 @@
 
 import { styled } from "styled-components"
+import { ControllersForm } from "../../styles"
 
 export const ItemContainer = styled.div`
     height: 100%;
@@ -7,10 +8,4 @@ export const ItemContainer = styled.div`
     padding: 20px;
     
 `
-export const ItemControllers = styled.form`
-    display: grid;
-    grid-template-columns: 200px 180px 200px;
-    grid-row-gap: 20px;
-    grid-column-gap: 40px;
-    /* grid-template-rows: repeat(2, 38px); */
-`
+export const ItemControllers = styled(ControllersForm)``
