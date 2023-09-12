@@ -43,6 +43,9 @@ body {
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
+
+  --color-border: #e8e8e8;
+  --bg-light: #f3f2f0;
 }
 
 h1,
@@ -63,13 +66,4 @@ a {
 a:hover {
   color: #535bf2;
 }
-.input-field-editor{
-  height: 100%;
-  width: 100PX;
-  border: none;
-  background: transparent;
-  color:#222;
-}
-.input-field-editor:focus{
-  outline: 3px solid #4f84f8;
-}
+

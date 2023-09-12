@@ -1,33 +1,34 @@
+import { ComponentProps } from 'react'
 import Item from '../../entities/Item'
 import Produto from '../../entities/Produto';
 import { Container } from './styles'
-import React, { ChangeEvent, useState } from 'react'
+import { ChangeEvent } from 'react'
+import IEntity from '../../entities/IEntidty';
 
 export interface IDoubleClickCel {
   item: (Item | Produto),
-  attCol: string
+  colName: string
   event: ChangeEvent<HTMLTableCellElement>
 }
-interface IProps {
+export type IProps = ComponentProps<'table'> & {
   header: Array<string>;
   data: Array<Item | Produto>;
   attr: Array<string>;
   hasIndex?: boolean;
-  children?: JSX.Element;
   onDoubleClickCel?: (object: IDoubleClickCel) => void;
+  onClickRow?: (rowData: IEntity, event: any) => void;
 }
 
-export default function ({
-  hasIndex,
-  header,
-  onDoubleClickCel,
-  attr,
-  data,
-  children
+export default function (props: IProps) {
+  const {
+    hasIndex,
+    header,
+    onDoubleClickCel,
+    attr,
+    data,
+    onClickRow,
 
-}: IProps) {
-  // const [childCell, setChildCell] = useState<React.ReactElement | null>(null)
-
+  } = props;
   return (
     <Container>
       <thead>
@@ -39,19 +40,14 @@ export default function ({
       <tbody>
         {data.map((item: any, k1) => {
           return (
-            <tr key={k1}>
+            <tr key={k1} onClick={(e: any) => onClickRow && onClickRow(item, e)}>
               {hasIndex && <th scope="row">{(k1 + 1)}</th>}
               {attr.map((att, k2) =>
                 <td
                   key={k2}
-                  onDoubleClick={(e: any) => {
-                    if (!!onDoubleClickCel)
-                      onDoubleClickCel({ attCol: att, item, event: e })
-                    // else 
-                  }
+                  onDoubleClick={(e: any) => (onDoubleClickCel && onDoubleClickCel({ colName: att, item, event: e }))
                   }>
                   {typeof item[att] == 'function' ? item[att]() : item[att]}
-                  {children}
                 </td>
               )}
             </tr>
