@@ -22,7 +22,18 @@ export const Container = styled(Table)`
         }
         & > input:focus{
             outline: 1px solid #4f84f8;
+            cursor: pointer;
         }
+    }
+    & td.actions{
+        /* display: flex;
+        justify-content: center;
+        align-items: center; */
+        display: none;
+    }
+    & tr:hover td.actions {
+        display: initial;
+        margin: 0 auto;
     }
     & > tbody >  tr.active th, & > tbody >  tr.active td{background-color: #4f84f8; color: #fff}
 `

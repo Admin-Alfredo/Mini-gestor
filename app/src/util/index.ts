@@ -1,6 +1,6 @@
 import { alimentos, pessoas, refeicoes } from "../datas";
 import { IAlimento, IRefeicao } from "../entities/IEntidty";
-import formatter from "format-number";
+
 
 export const getRandomNumber = (x: number): number => {
   let generetedNumber = Math.floor((Math.random() * x))
@@ -38,13 +38,3 @@ export function forEachNumber<T>(qtd: number, callbackFn: () => T): Array<T> {
   return result;
 }
 export const stringFormatted = (str: string, q: number = 20): string => str.slice(0, q).trim().concat('..');
-
-export const getTotalDeGastos = (items: Array<{ getTotal: () => number }>) => {
-  const totais = items.reduce((acumulador, item) => acumulador += item.getTotal(), 0)
-  var formattedNumber = formatter({ prefix: '£', suffix: '/item' })(68932, { noSeparator: true });
-
-  return {
-    full: totais,
-    formatted: formattedNumber
-  }
-}

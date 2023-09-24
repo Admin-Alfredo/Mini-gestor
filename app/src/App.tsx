@@ -1,5 +1,4 @@
 import Header from "./components/Header"
-import { produtos as _produtos_ } from "./handlersFn"
 import { AppContainer, Main } from "./styles"
 
 import SideBarLeft from "./components/SideBarLeft"

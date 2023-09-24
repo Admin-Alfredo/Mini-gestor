@@ -2,7 +2,7 @@ import { getRandomId } from "../util";
 import IEntity from "./IEntidty";
 import Item from "./Item";
 
-export type TProduto = {
+export type TProduto = IEntity & {
 	nome: string;
 	preco: number;
 	qtd: number;

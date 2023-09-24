@@ -3,7 +3,14 @@ import { createContext, ReactNode, useReducer } from "react";
 import Produto, { TProduto } from "../entities/Produto";
 import actions from "./actions";
 import Item, { TItem, TItemFieldsEditable } from "../entities/Item";
-import { forEachNumber, getRandomFullname, getRandomId, getRandomName, getRandomNumber, getRandomRefeicao } from "../util";
+import {
+  forEachNumber,
+  getRandomFullname,
+  getRandomId,
+  getRandomName,
+  getRandomNumber,
+  getRandomRefeicao
+} from "../util";
 export type TStateContext = {
   produtos: Produto[],
   produtoSelecionado: Produto | null
@@ -20,7 +27,7 @@ export type TContextProvider = {
 }
 
 const initialState: TStateContext = {
-  produtos: forEachNumber(5, () => getRandomRefeicao())
+  produtos: forEachNumber(15, () => getRandomRefeicao())
     .map((ref) =>
       new Produto(
         ref.nome,
@@ -47,7 +54,7 @@ const ProdutoContext = createContext<TContextProvider | null>(null);
 
 export const ProdutoContextProvider = ({ children }: { children: ReactNode }) => {
   const [state, dispatch] = useReducer(reducer, initialState)
-  
+
   return (
     <ProdutoContext.Provider value={{ state, dispatch }}>
       {children}
