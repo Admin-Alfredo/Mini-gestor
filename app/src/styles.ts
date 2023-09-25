@@ -17,3 +17,11 @@ export const ControllersForm = styled.form`
     grid-column-gap: 15px;
     height: 210px;
 `
+
+export const WIcon = styled.div`
+    width: 38px;
+    height: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`

@@ -20,6 +20,8 @@ export type TAction =
   | { tipo: 'SELECT_PRODUTO', id: string | number }
   | { tipo: 'INSERT_ITEM_PRODUTO', id: string | number, payload: TItem }
   | { tipo: 'UPDATE_ITEM_PRODUTO', id: string | number, payload: (string | number | boolean), field: TItemFieldsEditable }
+  | { tipo: 'DELETE_PRODUTO', id: string | number }
+  | { tipo: 'DELETE_ITEM', id: string | number }
 
 export type TContextProvider = {
   state: TStateContext,

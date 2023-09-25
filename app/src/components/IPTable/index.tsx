@@ -4,11 +4,7 @@ import Produto from '../../entities/Produto';
 import { Container } from './styles'
 
 
-// export interface IDoubleClickCel {
-//   item: (Item | Produto),
-//   colName: string
-//   event: ChangeEvent<HTMLTableCellElement>
-// }
+
 export type IProps = ComponentProps<'table'> & {
   header: Array<string>;
   data: Array<Item | Produto>;

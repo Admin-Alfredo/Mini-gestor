@@ -77,5 +77,20 @@ export default {
     console.log(item.getNome(), " , ", action.field, "(", action.payload, ")");
 
     return { ...state };
+  },
+  DELETE_PRODUTO: function (state: TStateContext, action: TAction): TStateContext {
+    if (action.tipo != 'DELETE_PRODUTO') return state;
+    return { ...state, produtos: state.produtos.filter(item => item.getId() != action.id) }
+  },
+  DELETE_ITEM: function (state: TStateContext, action: TAction): TStateContext {
+    if (action.tipo != 'DELETE_ITEM') return state;
+
+    state.produtoSelecionado?.setItem(
+      state.produtoSelecionado?.
+        getAllItems().
+        filter(item => item.getId() != action.id)
+    )
+    return { ...state }
   }
+
 };

@@ -3,13 +3,14 @@ import { Card } from "../Card/styles";
 
 export const Container = styled.aside`
   margin-left: 15px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  /* display: flex; */
+  /* flex-wrap: wrap;
+  gap: 10px; */
   
 ` 
 export const CardResultView = styled(Card)`
-  height: 100px;
+  width: 300px;
+
 `
 export const ViewHeader = styled.div`
   padding: 0 5px;
