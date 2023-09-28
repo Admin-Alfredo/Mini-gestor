@@ -48,13 +48,16 @@ export default class Produto implements IEntity {
 
 	setItem(item: Item | Item[]) {
 		if (Array.isArray(item))
-			return this.items = item;
-
-		this.items.push(item);
+			this.items = item;
+		else
+			this.items.push(item);
 	}
 
 	getTotalDeGastos(): number {
 		return this.items
 			.reduce((acumulador, item) => acumulador += item.getTotal(), 0);
+	}
+	getMarginDeLucro(): number {
+		return this.getTotal() - (this.getTotalDeGastos() * this.getQtd())
 	}
 }

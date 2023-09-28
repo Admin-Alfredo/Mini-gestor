@@ -62,6 +62,7 @@ export const Container = styled.div`
 `
 export const ControlWrapper = styled.div`
     width: 100%;
+    height: auto;
     display: flex;
     border: 1px solid #d0d5dd;
 `

@@ -45,6 +45,7 @@ body {
   user-select: none;
 
   --color-border: #e8e8e8;
+  --color-success: #11ab64;
   --bg-light: #f3f2f0;
 }
 
@@ -66,4 +67,3 @@ a {
 a:hover {
   color: #535bf2;
 }
-

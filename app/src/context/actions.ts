@@ -80,7 +80,11 @@ export default {
   },
   DELETE_PRODUTO: function (state: TStateContext, action: TAction): TStateContext {
     if (action.tipo != 'DELETE_PRODUTO') return state;
-    return { ...state, produtos: state.produtos.filter(item => item.getId() != action.id) }
+    return {
+      ...state,
+      produtos: state.produtos.filter(item => item.getId() != action.id),
+      produtoSelecionado: null
+    }
   },
   DELETE_ITEM: function (state: TStateContext, action: TAction): TStateContext {
     if (action.tipo != 'DELETE_ITEM') return state;
@@ -90,7 +94,12 @@ export default {
         getAllItems().
         filter(item => item.getId() != action.id)
     )
-    return { ...state }
+    return { ...state, produtoSelecionado: state.produtoSelecionado }
+  },
+  INSERT_PRODUTO_SEARCED: function (state: TStateContext, action: TAction): TStateContext {
+    if (action.tipo != 'INSERT_PRODUTO_SEARCED') return state;
+
+    return { ...state, produtosSearced: action.payload }
   }
 
 };

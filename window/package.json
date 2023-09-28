@@ -15,7 +15,9 @@
   "author": "admir",
   "license": "MIT",
   "dependencies": {
-    "electron-squirrel-startup": "^1.0.0"
+    "@types/pdfmake": "^0.2.4",
+    "electron-squirrel-startup": "^1.0.0",
+    "pdfmake": "^0.2.7"
   },
   "devDependencies": {
     "@electron-forge/cli": "^6.2.1",

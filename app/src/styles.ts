@@ -24,4 +24,9 @@ export const WIcon = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+` 
+export const Title = styled.h3`
+    color: #444;
+    margin: 15px 0;
+    font-size: 1.2rem
 `

@@ -13,7 +13,8 @@ import {
 } from "../util";
 export type TStateContext = {
   produtos: Produto[],
-  produtoSelecionado: Produto | null
+  produtoSelecionado: Produto | null,
+  produtosSearced: Produto[]
 }
 export type TAction =
   | { tipo: 'CREATE_PRODUTO', payload: TProduto }
@@ -22,6 +23,7 @@ export type TAction =
   | { tipo: 'UPDATE_ITEM_PRODUTO', id: string | number, payload: (string | number | boolean), field: TItemFieldsEditable }
   | { tipo: 'DELETE_PRODUTO', id: string | number }
   | { tipo: 'DELETE_ITEM', id: string | number }
+  | { tipo: 'INSERT_PRODUTO_SEARCED', payload: Produto[] }
 
 export type TContextProvider = {
   state: TStateContext,
@@ -46,7 +48,8 @@ const initialState: TStateContext = {
             getRandomNumber(2))))
       )
     ),
-  produtoSelecionado: null
+  produtoSelecionado: null,
+  produtosSearced: []
 }
 
 
