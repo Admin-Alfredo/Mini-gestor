@@ -18,7 +18,7 @@ export const ControllersForm = styled.form`
     height: 210px;
 `
 
-export const WIcon = styled.div`
+export const WIcon = styled.div.attrs({ className: 'wrapper-icon'})`
     width: 38px;
     height: 38px;
     display: flex;

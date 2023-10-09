@@ -91,8 +91,8 @@ export default {
 
     state.produtoSelecionado?.setItem(
       state.produtoSelecionado?.
-        getAllItems().
-        filter(item => item.getId() != action.id)
+        getAllItems()
+        .filter(item => item.getId() != action.id)
     )
     return { ...state, produtoSelecionado: state.produtoSelecionado }
   },

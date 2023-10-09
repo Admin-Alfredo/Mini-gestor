@@ -1,8 +1,8 @@
-import { createContext, ReactNode, useReducer } from "react";
-
+import { createContext, ReactNode, useReducer, useState } from "react";
 import Produto, { TProduto } from "../entities/Produto";
 import actions from "./actions";
 import Item, { TItem, TItemFieldsEditable } from "../entities/Item";
+
 import {
   forEachNumber,
   getRandomFullname,
@@ -14,7 +14,8 @@ import {
 export type TStateContext = {
   produtos: Produto[],
   produtoSelecionado: Produto | null,
-  produtosSearced: Produto[]
+  produtosSearced: Produto[],
+  
 }
 export type TAction =
   | { tipo: 'CREATE_PRODUTO', payload: TProduto }
@@ -27,7 +28,8 @@ export type TAction =
 
 export type TContextProvider = {
   state: TStateContext,
-  dispatch: React.Dispatch<TAction>
+  dispatch: React.Dispatch<TAction>,
+  useActionSearchProduto: [boolean, React.Dispatch<React.SetStateAction<boolean>>]
 }
 
 const initialState: TStateContext = {
@@ -59,9 +61,10 @@ const ProdutoContext = createContext<TContextProvider | null>(null);
 
 export const ProdutoContextProvider = ({ children }: { children: ReactNode }) => {
   const [state, dispatch] = useReducer(reducer, initialState)
+  const useActionSearchProduto = useState(false)
 
   return (
-    <ProdutoContext.Provider value={{ state, dispatch }}>
+    <ProdutoContext.Provider value={{ state, dispatch, useActionSearchProduto }}>
       {children}
     </ProdutoContext.Provider>
   )

@@ -45,7 +45,7 @@ export default class Item implements IEntity {
 	getFornecedor(): string { return this.fornecedor }
 	getUnidade(): number { return this.unidade };
 	getPrecoUnitario(): number { return this.getPreco() / this.getQtd() }
-	getTotal(): number { return this.getPrecoUnitario() }
+	getTotal(): number { return this.getPreco() * this.getQtd() }
 	getQtdFormatedWithUnidade(): string {
 		return !!this.getUnidade() ? `${this.getQtd()}/${this.getUnidade()}` : `${this.getQtd()}`
 	}

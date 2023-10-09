@@ -1,6 +1,5 @@
 export default interface IEntity {
   id: string | number;
-  getId: (() => (string | number));
 }
 
 export interface IAlimento {

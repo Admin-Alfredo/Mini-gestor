@@ -58,6 +58,6 @@ export default class Produto implements IEntity {
 			.reduce((acumulador, item) => acumulador += item.getTotal(), 0);
 	}
 	getMarginDeLucro(): number {
-		return this.getTotal() - (this.getTotalDeGastos() * this.getQtd())
+		return this.getTotal() - (this.getTotalDeGastos())
 	}
 }

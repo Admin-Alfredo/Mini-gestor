@@ -9,19 +9,22 @@ const saveValue = (id: (string | number), field: TItemFieldsEditable, value: str
   dispatch({ tipo: 'UPDATE_ITEM_PRODUTO', field: field.replace('get', 'set'), id, payload: value })
 }
 
-export const handlerEntitySelectRow = (entity: IEntity, e: any, dispatch: React.Dispatch<TAction>) => {
-  const tbody = e.currentTarget.parentElement!;
-  if (!tbody) return;
-  if (e.currentTarget.classList.contains('active')) return;
+export const handlerEntitySelectRow = (currentTarget: HTMLElement, entity: IEntity, context: TContextProvider): boolean => {
+
+  const tbody = currentTarget.parentElement!;
+  console.log(currentTarget.dataset.id)
+  if (!tbody) return false;
+  if (currentTarget.classList.contains('active')) return false;
   console.log(tbody.querySelectorAll('tr'));
 
-  (tbody.querySelectorAll('tr') as HTMLTableRowElement[]).forEach((tr) => {
+  (tbody.querySelectorAll('tr') as NodeListOf<HTMLTableRowElement>).forEach((tr) => {
     if (tr.classList.contains('active')) tr.classList.remove('active');
   })
-  e.currentTarget.classList.add('active')
+  currentTarget.classList.add('active')
 
 
-  dispatch({ tipo: 'SELECT_PRODUTO', id: entity.id })
+  context.dispatch({ tipo: 'SELECT_PRODUTO', id: entity.id })
+  return true;
 }
 export type TEditorProps = {
   event: ChangeEvent,
@@ -29,7 +32,7 @@ export type TEditorProps = {
   item: (Item | Produto)
 }
 export const handlerEntityEditor = (
-  { event: { target }, colName, item }: TEditorProps, dispatch: React.Dispatch<TAction>
+  { event: { target }, colName, item }: TEditorProps, context: TContextProvider
 ) => {
   const inputElement = document.createElement('input');
   const textTmp = target.textContent;
@@ -43,13 +46,13 @@ export const handlerEntityEditor = (
     target.removeChild(inputElement);
     target.innerHTML = inputElement.value!;
 
-    saveValue(item.getId(), colName as TItemFieldsEditable, target.textContent!, dispatch);
+    saveValue(item.getId(), colName as TItemFieldsEditable, target.textContent!, context.dispatch);
   }
 
   inputElement.addEventListener('blur', handlerBlurInputEditor);
 }
 
-export const handlerEntityDeleteRow = (e: ChangeEvent, tipo: string, entity: IEntity, dispatch: React.Dispatch<TAction>) => {
+export const handlerEntityDeleteRow = (e: ChangeEvent, tipo: string, entity: IEntity, context: TContextProvider) => {
   const target: HTMLElement = e.currentTarget.parentElement?.parentElement!
 
   for (let i = 0; i < target.children.length; i++)
@@ -58,30 +61,31 @@ export const handlerEntityDeleteRow = (e: ChangeEvent, tipo: string, entity: IEn
   setTimeout(() => {
     switch (tipo) {
       case 'produto':
-        dispatch({ tipo: 'DELETE_PRODUTO', id: entity.id })
+        context.dispatch({ tipo: 'DELETE_PRODUTO', id: entity.id })
         break;
       case 'item':
-        dispatch({ tipo: 'DELETE_ITEM', id: entity.id })
+        context.dispatch({ tipo: 'DELETE_ITEM', id: entity.id })
         break;
     }
   }, 400)
 }
 
-export const handlerInputTextForSearchProduto = (e: any, { state, dispatch }: TContextProvider) => {
+export const handlerInputTextForSearchProduto = (e: any, context: TContextProvider) => {
   const inputSearch: HTMLInputElement = e.currentTarget
   if (inputSearch.value.trim() == "")
-    dispatch({ tipo: 'INSERT_PRODUTO_SEARCED', payload: state.produtos })
-  else
-    dispatch({
+    context.dispatch({ tipo: 'INSERT_PRODUTO_SEARCED', payload: context.state.produtos })
+  else {
+    context.dispatch({
       tipo: 'INSERT_PRODUTO_SEARCED',
-      payload: state.produtos.filter(produto => produto.getNome().includes(inputSearch.value))
+      payload: context.state.produtos.filter(produto => produto.getNome().includes(inputSearch.value))
     })
+  }
 }
 
-export const handlerFocusInputSearchProduto = (e: any, { state, dispatch }: TContextProvider, setIsSearch: React.Dispatch<React.SetStateAction<boolean>>) => {
+export const handlerFocusInputSearchProduto = (e: any, context: TContextProvider, setIsSearch: React.Dispatch<React.SetStateAction<boolean>>) => {
   const inputSearch: HTMLInputElement = e.currentTarget
   if (inputSearch.value.trim() == "")
-    return dispatch({ tipo: 'INSERT_PRODUTO_SEARCED', payload: state.produtos })
+    context.dispatch({ tipo: 'INSERT_PRODUTO_SEARCED', payload: context.state.produtos })
 
   inputSearch.selectionStart = 0
   inputSearch.selectionEnd = inputSearch.value.length
