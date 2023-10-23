@@ -11,6 +11,7 @@ import {
   getRandomNumber,
   getRandomRefeicao
 } from "../util";
+
 export type TStateContext = {
   produtos: Produto[],
   produtoSelecionado: Produto | null,

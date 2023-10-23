@@ -31,7 +31,7 @@ export const handlerBlurInputSearchProduto = (e: any, setIsSearch: React.Dispatc
 
 
 export const handlerClickGeneratorPdf = (state: TStateContext) => {
-
+    
   // const printer = new PdfPrinter({
 
   // })

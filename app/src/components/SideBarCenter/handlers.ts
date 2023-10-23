@@ -61,10 +61,10 @@ export const handlerEntityDeleteRow = (e: ChangeEvent, tipo: string, entity: IEn
   setTimeout(() => {
     switch (tipo) {
       case 'produto':
-        context.dispatch({ tipo: 'DELETE_PRODUTO', id: entity.id })
+        context.dispatch({ tipo: 'DELETE_PRODUTO', id: entity.id });
         break;
       case 'item':
-        context.dispatch({ tipo: 'DELETE_ITEM', id: entity.id })
+        context.dispatch({ tipo: 'DELETE_ITEM', id: entity.id });
         break;
     }
   }, 400)
