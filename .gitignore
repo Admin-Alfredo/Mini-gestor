@@ -1,3 +1,6 @@
+app
+window
+
 # Logs
 logs
 app/*.log
@@ -90,5 +93,3 @@ window/*.tgz
 window/.env
 
 
-app/
-window/
