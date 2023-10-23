@@ -1,11 +1,11 @@
 @font-face {
   font-family: Roboto;
-  src: url(/fontes/Roboto-Regular.ttf);
+  src: url(/fonts/Poppins-Regular.ttf);
 }
 
 @font-face {
   font-family: Roboto-Bold;
-  src: url(/fontes/Roboto-Bold.ttf);
+  src: url(/fonts/Poppins-Bold.ttf);
 }
 
 :root {

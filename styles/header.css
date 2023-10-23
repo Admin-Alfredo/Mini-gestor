@@ -1,0 +1,29 @@
+.header{
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 100px;
+  border-bottom: 1px solid #e7e7e8;
+}
+.nav-left{ display: flex; align-items: center;}
+.nav-left .brand{
+  display: flex;
+  align-items: center;
+}
+.nav-left .brand > img.brand-img{
+  width: 50px;
+}
+.nav-left .brand > span.brand-text{
+  font-size: 1.1rem;
+  font-family: Roboto-Bold;
+  font-weight: 600;
+}
+.nav-right{ display: flex; align-items: center;}
+.nav-right ul {
+  list-style: none;
+  display: flex;
+}
+.nav-right ul li{
+  padding: 0 15px;
+  cursor: pointer;
+}
