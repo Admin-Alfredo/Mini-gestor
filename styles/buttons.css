@@ -1,0 +1,22 @@
+.btn{
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all ease .4s;
+  border: 2px solid transparent;
+}
+.btn.large{font-size: 1.5rem;}
+.btn.rounded{ border-radius: 20px;}
+.btn.primary, .btn.outline:hover{
+  background-color: var(--color-primary);
+  color: #FFF;
+}
+
+.btn.outline, .btn.primary:hover{
+  border-color: var(--color-primary);
+  border-style: dashed;
+  background: transparent;
+  color: var(--color-primary);
+}

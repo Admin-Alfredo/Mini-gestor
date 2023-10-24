@@ -6,12 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles/reboots.css">
   <link rel="stylesheet" href="styles/header.css">
+  <link rel="stylesheet" href="styles/hero.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/buttons.css">
+  <!-- ICON LIBRARY -->
+  <script src="javascripts/libs/lucide.js"></script>
   <title>Mini Gestor</title>
 </head>
 
 <body>
   <header class="header">
-
     <div class="nav-left">
       <div class="brand">
         <img class="brand-img" src="assets/store-manager.png" alt="">
@@ -20,23 +24,63 @@
     </div>
     <div class="nav-right">
       <ul>
-        <li>Recursos</li>
-        <li>Foncionalidades</li>
-        <li>Versões</li>
-        <li>GitHub</li>
-        <li>linkedin</li>
+        <li>
+          <!-- data-lucide="settings-2" -->
+          <span>Recursos</span> </i>
+          <i data-lucide="chevron-down"></i>
+        </li>
+        <li>
+          <!-- data-lucide="wrench" -->
+          <span>Foncionalidades</span>
+          <i data-lucide="chevron-down"></i>
+        </li>
+        <li>
+          <!-- data-lucide="git-branch" -->
+          <span>Versões</span>
+          <i data-lucide="chevron-down"></i>
+        </li>
+        <li> 
+          <i data-lucide="github"></i>
+        </li>
+        <li><i data-lucide="linkedin"></i></li>
       </ul>
     </div>
 
   </header>
-  <main>
-    <div class="hero">
-      <div class="titles">
-        <h1 class="title-1">Mini Gestor</h1>
-        <h2>Gere o seu negócio <br> o software, intuitiva fácil e dinámico</h2>
+  <div class="hero">
+    <div class="titles">
+      <h1 class="title">Mini Gestor</h1>
+      <h2 class="title">Gerencie o seu negócio</h2>
+      <p> com um software fácil, intuitiva e dinámico</p>
+      <div class="button-list">
+        <button class="btn primary large rounded"><i data-lucide="download"></i> &nbsp;&nbsp;Baixar agora</button>
+        <button class="btn outline large rounded">Ver recursos</button>
       </div>
     </div>
+    <div class="logo-big">
+      <img class="brand-img" src="assets/store-manager.png" alt="">
+    </div>
+  </div>
+  <main class="container">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
   </main>
+
+  <script>
+    lucide.createIcons();
+  </script>
 </body>
 
 </html>

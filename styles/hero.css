@@ -1,3 +1,39 @@
-.titles .title-1{
-  
+.hero{
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 200px;
+  background-color: #FFF;
+}
+.titles{ flex: 2;}
+.titles p{
+  font-size: 1.5rem;
+  color: #6d6d72;
+}
+h1.title{
+  font-family: Poppins-Bold;
+  font-size: 4rem;
+  margin-bottom: 0;
+  color: #3c3c43;
+}
+h2{
+  font-size: 3rem;
+  line-height: 60px;
+  letter-spacing: -.07rem;
+  font-weight: 700;
+}
+.hero .logo-big{
+  flex: 1;
+  width: 400px;
+}
+.hero .logo-big img{
+  width: 80%
+}
+
+.button-list{
+  margin-top: 30px;
+}
+.button-list button:last-child{
+  margin-left: 15px;
 }
