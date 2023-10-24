@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Poppins:wght@100;400;700&family=Roboto&display=swap');
 @font-face {
   font-family: Poppins;
   src: url(/fonts/Poppins-Regular.ttf);
@@ -7,6 +8,7 @@
   font-family: Poppins-Bold;
   src: url(/fonts/Poppins-Bold.ttf);
 }
+
 
 :root {
   font-family: Poppins;
