@@ -16,7 +16,8 @@
 .nav-left .brand > span.brand-text{
   font-size: 1.1rem;
   font-family: Poppins-Bold;
-  font-weight: 600;
+  font-family: Poppins;
+  font-weight: bold;
 }
 .nav-right{ display: flex; align-items: center;}
 .nav-right ul {
